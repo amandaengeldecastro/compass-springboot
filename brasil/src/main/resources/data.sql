@@ -13,10 +13,10 @@ INSERT INTO ESTADO(nome, regiao, populacao, capital, area) VALUES('Pernambuco','
 INSERT INTO ESTADO(nome, regiao, populacao, capital, area) VALUES('Piaui','nordeste',3195000,'Teresina',251.529);
 INSERT INTO ESTADO(nome, regiao, populacao, capital, area) VALUES('Rio Grande do Norte','nordeste',3409000,'Natal',52.797);
 INSERT INTO ESTADO(nome, regiao, populacao, capital, area) VALUES('Sergipe','nordeste',2220000,'Aracaju',21.910);
-INSERT INTO ESTADO(nome, regiao, populacao, capital, area) VALUES('Goias','centro-oeste',6523000,'Goiana',340.086);
-INSERT INTO ESTADO(nome, regiao, populacao, capital, area) VALUES('Mato Grosso','centro-oeste',3224000,'Cuiaba',903.357);
-INSERT INTO ESTADO(nome, regiao, populacao, capital, area) VALUES('Mato Grosso do Sul','centro-oeste',2620000,'Campo Grande',357.125);
-INSERT INTO ESTADO(nome, regiao, populacao, capital, area) VALUES('Distrito Federal', 'centro-oeste', 3097000, 'Brasilia', 5.802);
+INSERT INTO ESTADO(nome, regiao, populacao, capital, area) VALUES('Goias','centrooeste',6523000,'Goiana',340.086);
+INSERT INTO ESTADO(nome, regiao, populacao, capital, area) VALUES('Mato Grosso','centrooeste',3224000,'Cuiaba',903.357);
+INSERT INTO ESTADO(nome, regiao, populacao, capital, area) VALUES('Mato Grosso do Sul','centrooeste',2620000,'Campo Grande',357.125);
+INSERT INTO ESTADO(nome, regiao, populacao, capital, area) VALUES('Distrito Federal', 'centrooeste', 3097000, 'Brasilia', 5.802);
 INSERT INTO ESTADO(nome, regiao, populacao, capital, area) VALUES('Espirito Santo','sudeste',3885000,'Vitoria',46.095);
 INSERT INTO ESTADO(nome, regiao, populacao, capital, area) VALUES('Minas Gerais','sudeste',20870000,'Belo Horizonte',586.528);
 INSERT INTO ESTADO(nome, regiao, populacao, capital, area) VALUES('Rio de Janeiro','sudeste',6748000,'Rio de Janeiro',1.200);

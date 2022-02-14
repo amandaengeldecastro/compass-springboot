@@ -71,9 +71,11 @@ public class EstadoController {
 	}
 		
 	@PostMapping
-	@Transactional
-	public ResponseEntity<EstadoDto> cadastrar(@RequestBody @Valid EstadoForm form, UriComponentsBuilder uriBuilder){
-		Estado estado = form.converter(estadoRepository);
+	@Transactional 
+	//Assinatura do método - o que estou prometendo fazer 
+	//MODIFICADOR DE ACESSO (PUBLIC) - TIPO DE RETORNO (ResponseEntity) - NOME DO MÉTODO(CADASTRAR) - ARGUMENTOS(EstadoForm) 
+	public ResponseEntity<EstadoDto> cadastrarEstado(@RequestBody @Valid EstadoForm estadoForm, UriComponentsBuilder uriBuilder){
+		Estado estado = estadoForm.converter(estadoForm);
 		estadoRepository.save(estado);
 		
 		URI uri = uriBuilder.path("/estados/{id}").buildAndExpand(estado.getId()).toUri();
@@ -81,21 +83,23 @@ public class EstadoController {
 	}
 	
 	@GetMapping("/{id}")
-	public ResponseEntity<DetalhesEstadoDto> detalhar(@PathVariable Long id) {
+	public ResponseEntity<Estado> detalhar(@PathVariable Long id) {
 		Optional<Estado> estado = estadoRepository.findById(id);
 		if (estado.isPresent()) {
-			return ResponseEntity.ok(new DetalhesEstadoDto());
+			return ResponseEntity.ok(estado.get());
 		}
 		
 		return ResponseEntity.notFound().build();
 	}
 	
+
 	@PutMapping("/{id}")
 	@Transactional
 	public ResponseEntity<EstadoDto> atualizar(@PathVariable Long id, @RequestBody @Valid EstadoForm form) {
-		Optional<Estado> optional = estadoRepository.findById(id);
-		if (optional.isPresent()) {
-			Estado estado= form.atualizar(id, estadoRepository);
+		Optional<Estado> estadoOptional = estadoRepository.findById(id);
+		if (estadoOptional.isPresent()) {
+			Estado estado = form.atualizar(id, form);
+			estadoRepository.save(estado);
 			return ResponseEntity.ok(new EstadoDto(estado));
 		}
 		
@@ -113,4 +117,4 @@ public class EstadoController {
 		
 		return ResponseEntity.notFound().build();
 	}
-}
+}	

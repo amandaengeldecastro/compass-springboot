@@ -18,6 +18,17 @@ public class Estado {
 	private long populacao;
 	private String capital;
 	private double area;
+	
+	public Estado() {
+	}
+
+	public Estado(String nome, String regiao, long populacao, String capital, double area) {
+		this.nome = nome;
+		this.regiao = regiao;
+		this.populacao = populacao;
+		this.capital = capital;
+		this.area = area;
+	}
 
 	@Override
 	public int hashCode() {
@@ -94,6 +105,3 @@ public class Estado {
 
 		
 }
-
-
-

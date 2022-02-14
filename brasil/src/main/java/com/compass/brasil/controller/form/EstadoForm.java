@@ -14,11 +14,11 @@ public class EstadoForm {
 	private String nome;
 	@NotNull @NotEmpty 
 	private String regiao;
-	@NotNull @NotEmpty
+	@NotNull 
 	private long populacao;
 	@NotNull @NotEmpty
 	private String capital;
-	@NotNull @NotEmpty
+	@NotNull 
 	private double area;
 	
 	public String getNome() {
@@ -52,14 +52,22 @@ public class EstadoForm {
 		this.area = area;
 	}
 	
-	public Estado converter(EstadoRepository estadoRepository){
-		return new Estado();
-	}
-	public Estado atualizar(Long id, EstadoRepository estadoRepository) {
-		return new Estado();
+	public Estado converter(EstadoForm estadoForm){
+		return new Estado(estadoForm.getNome(), estadoForm.getRegiao(), estadoForm.getPopulacao(), 
+				estadoForm.getCapital(), estadoForm.getArea());
 	}
 	
+	public Estado atualizar(Long id, EstadoForm estadoForm) {
+		 Estado estado = new Estado();
+		 estado.setId(id);
+		 estado.setNome(estadoForm.getNome());
+		 estado.setRegiao(estadoForm.getRegiao());
+		 estado.setPopulacao(estadoForm.getPopulacao());
+		 estado.setCapital(estadoForm.getCapital());
+		 estado.setArea(estadoForm.getArea());
+		 return estado; 
+	}
 	
+	 
 }
-
 
